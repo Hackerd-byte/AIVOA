@@ -5,12 +5,12 @@ function App() {
   const [title, setTitle] = useState("");
 
   const fetchTasks = async () => {
-    const res = await fetch("http://127.0.0.1:8000/tasks");
+    const res = await fetch("https://aivoa.onrender.com/tasks");
     setTasks(await res.json());
   };
 
   const addTask = async () => {
-    await fetch("http://127.0.0.1:8000/tasks", {
+    await fetch("https://aivoa.onrender.com/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: Date.now(), title, completed: false })
